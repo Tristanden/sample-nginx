@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: ngrok-nginx
+    image: nginx:latest
+    ports:
+      - 8443:443
+      - 8080:80
+    volumes:
+      - ./certs:/etc/nginx/certs
+      - ./conf:/etc/nginx/conf.d/
+      - ./data:/data
+      - ./pwd:/pwd
